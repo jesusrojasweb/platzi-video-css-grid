@@ -6,7 +6,7 @@
 	--rosa: #db1178;
 	--verde: #27fdbc;
 	--colorTitle: #43475c;
-	--colorText: #b1afb5;
+	--colorText: #858388;
 
 }
 img{
@@ -198,4 +198,97 @@ body{
 }
 .ComenSugeren{
 	grid-area: comentario;
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	padding: 2em 10em 2em 2em;
+	grid-gap: 30px;
+	&-comentarios{
+		&-title{
+			margin: 0;
+			color: var(--colorTitle);
+			font-weight: normal;
+		}
+		&-form{
+			margin-top: 1em;
+			display: grid;
+			grid-template-columns: 1fr 7fr;
+			overflow: hidden;
+			border-radius: .5rem;
+			border-bottom: 3px solid #d2d2d2;
+			&-imagen{
+				display: grid;
+				justify-items: center;
+				background: #f1eff1;
+				padding: .3em;
+				&-perfil{
+					margin: 0;
+					width: 40px;
+					height: 40px;
+					border-radius: 50%;
+					overflow: hidden;
+					&-img{
+						vertical-align: top;
+					}
+				}
+			}
+			&-input{
+				background: #f1eff1;
+				border: none;
+				font-size: 1.3rem;
+				padding-left: .5em;
+				&:focus{
+
+				}
+			}
+		}
+		&-list{
+			margin-top: 1em;
+			&-item{
+				display: grid;
+				grid-template-columns: 1fr 7fr;
+				grid-template-areas: "imagen nombre"
+						   "imagen comentario";
+				margin-bottom: 1.5em;
+				&-perfil{
+					margin: 0;
+					grid-area: imagen;
+					width: 50px;
+					height: 50px;
+					border-radius: 50%;
+					overflow: hidden;
+					&-img{
+
+					}
+				}
+				&-nombre{
+					grid-area: nombre;
+					margin: 0;
+					font-size: 1.2rem;
+					font-weight: normal;
+					color: var(--colorText);
+				}
+				&-comentario{
+					margin: 0;
+					grid-area: comentario;
+					color: var(--colorText);
+				}
+			}
+		}
+	}
+	&-sugerencias{
+		&-title{
+			margin: 0;
+			color: var(--colorTitle);
+			font-weight: normal;
+			margin-bottom: 1em;
+		}
+		&-item{
+			text-decoration: none;
+			color: var(--colorText);
+			&-img{
+				border-radius: .25rem;
+				box-shadow: 2px 4px 20px 0px #afadad;
+			}
+		}
+	}
 }
