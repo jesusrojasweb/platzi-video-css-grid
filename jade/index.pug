@@ -8,6 +8,7 @@ head
 	link(rel="stylesheet", href="css/normalize.css")
 	link(rel="stylesheet", href="css/estilos.css")
 body
+	
 	navbar.Platzi
 		h1.Platzi-title!= "Platzi<span>Video</span>"
 		ol.Platzi-list
@@ -50,3 +51,8 @@ body
 				figure.Platzi-friend-item-perfil
 					img.Platzi-friend-item-perfil-img(src="img/perfil1.jpg", alt="perfil1")
 				p.Platzi-friend-item-nombre Gordon Caroll
+	section.Video
+		img.Video-img(src="img/bg.jpg", alt="background")
+		a(href="#").Video-overlay
+			i.fa.fa-arrow-left
+			i.fa.fa-play
