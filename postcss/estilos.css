@@ -14,7 +14,7 @@ img{
 }
 body{
 	display: grid;
-	grid-template: 20% 1fr 20% / 2fr 6fr;
+	grid-template-columns: 2fr 6fr;
 	grid-template-areas: "navbar video"
 						 "navbar info"
 						 "navbar comentario";
@@ -288,6 +288,64 @@ body{
 			&-img{
 				border-radius: .25rem;
 				box-shadow: 2px 4px 20px 0px #afadad;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1024px){
+	body{
+		grid-template-columns: 1fr;
+		grid-template-areas: "navbar"
+							 "video"
+							 "info"
+							 "comentario";
+	}
+	.Platzi{
+		display: grid;
+		padding: 2em 4em;
+		grid-template-columns: 5fr 2fr;
+		grid-template-areas: "titulo boton"
+							 "lista lista"
+							 "friend friend";
+		height: 30px;
+		overflow: hidden;
+		&-title{
+			margin: 0;
+			grid-area: titulo;
+		}
+		&-boton{
+			grid-area: boton;
+			color: white;
+			font-size: 1.8rem;
+			justify-self: end;
+			&:hover{
+
+				cursor: pointer;
+			}
+		}
+		&-list{
+			grid-area: lista;
+			justify-self: center;
+			&-title{
+				text-align: center;
+			}
+		}
+		&-friend{
+			grid-area: friend;
+			justify-self: center;
+			&-title{
+				text-align: center;
+			}
+		}
+	}
+	.Info{
+		&-social{
+			&-btn{
+				&:nth-child(4){
+					.Info-social-btn-list-item{
+						margin-right: .2em;
+					}
+				}
 			}
 		}
 	}
