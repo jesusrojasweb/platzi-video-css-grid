@@ -1,0 +1,86 @@
+:root{
+	--Back: #16182b;
+	--Fuente: 'Lato', sans-serif;
+	--rojo: #c90021;
+	--rosa: #db1178;
+	--verde: #27fdbc;
+	--colorTitle: #43475c;
+	--colorText: #b1afb5;
+}
+img{
+	width: 100%;
+}
+body{
+	display: grid;
+	grid-template: 20% 1fr 20% / 1fr 4fr;
+	grid-template-areas: "navbar video"
+						 "navbar info"
+						 "navbar comentario";
+}
+.Platzi{
+	grid-area: navbar;
+	background: var(--Back);
+	padding: 2em 1em;
+	&-title{
+		color: white;
+		font-weight: 400;
+		span{
+			background: linear-gradient(to left, var(--rosa), var(--rojo)) ;
+
+			-webkit-background-clip: text;
+			color: transparent;
+			font-weight: 600;
+		}
+	}
+	&-list{
+		padding: 0 1em;
+		&-title{
+			color: #ffffffcc;
+			font-weight: lighter;
+			margin-left: -1em;
+			font-size: 1.1rem;
+
+		}
+		&-item{
+			color: #ffffffcc;
+			padding-bottom: 1em;
+			padding-left: 1em;
+			a{
+				color: #ffffffcc;
+				text-decoration: none;
+			}
+		}
+	}
+	&-friend{
+		&-title{
+
+			color: #ffffffcc;
+			font-weight: lighter;
+			font-size: 1.1rem;
+		}
+		&-item{
+			display: flex;
+			margin-bottom: 1em;
+			&-perfil{
+				width: 45px;
+				height: 45px;
+				margin: 0;
+				overflow: hidden;
+				border-radius: 50%;
+				margin-right: 1em;
+			}
+			&-nombre{
+				color: #ffffffcc;
+			}
+		}
+	}
+}
+.Video{
+	grid-area: video;
+}
+.Info{
+	grid-area: info;
+}
+.ComenSugeren{
+	grid-area: comentario;
+}
