@@ -1,18 +1,20 @@
 :root{
 	--Back: #16182b;
 	--Fuente: 'Lato', sans-serif;
+	--morado: #8d3cf4;
 	--rojo: #c90021;
 	--rosa: #db1178;
 	--verde: #27fdbc;
 	--colorTitle: #43475c;
 	--colorText: #b1afb5;
+
 }
 img{
 	width: 100%;
 }
 body{
 	display: grid;
-	grid-template: 20% 1fr 20% / 1fr 4fr;
+	grid-template: 20% 1fr 20% / 2fr 6fr;
 	grid-template-areas: "navbar video"
 						 "navbar info"
 						 "navbar comentario";
@@ -77,9 +79,122 @@ body{
 }
 .Video{
 	grid-area: video;
+	position: relative;
+	&-img{
+		vertical-align: top;
+	}
+	&-overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0,0,0,.3);
+		color: #fffffffc;
+		text-decoration: none;
+		padding: 4em 3em;
+		display: grid;
+		grid-template-rows: 2rem 1fr;
+		transition: .3s;
+		i{
+			font-size: 2rem;
+		}
+		&-play{
+			align-self: center;
+			justify-self: center;
+			border-radius: 50%;
+			border: 5px solid #fffffffc;
+			width: 100px;
+			height: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	
+	}
+	&:hover{
+		.Video-overlay{
+			background: rgba(0,0,0,.5);
+		}
+	}
 }
 .Info{
 	grid-area: info;
+	padding: 2em 1em; 
+	border-bottom: 4px solid #d0d0d0;
+	&-title{
+		color: var(--colorTitle);
+		margin: 0;
+		font-weight: normal;
+	}
+	&-views{
+		margin-top: .5em;
+		color: #b9b8b9;
+	}
+	&-social{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr 4fr;
+		align-items: center;
+		text-align: center;
+		&-btn{
+			a{
+				text-decoration: none;
+				
+			}
+			&:nth-child(1){
+				a{
+					background: linear-gradient(to left, var(--rosa), var(--rojo));
+					color: white;
+					border-radius: .5em;
+					padding: .5em 1em;
+				}
+			}
+			&:nth-child(2),&:nth-child(3){
+				a{
+					color: #4c4e61;
+				}
+			}
+			&:nth-child(4){
+				margin: 0;
+				padding: 0;
+				display: flex;
+				list-style: none;
+				justify-self: end;
+				.Info-social-btn-list-item{
+					margin-right: 1em;
+					a{
+						color: white;
+						padding: .5em 1em;
+						border-radius: 1rem;
+					}
+					&:nth-child(1){
+						a{
+							background: var(--morado);
+
+						}
+					}
+					&:nth-child(2){
+						a{
+							background: var(--verde);
+						}
+					}
+					&:nth-child(3){
+						a{
+							background: var(--rojo);
+						}
+					}
+					&:nth-child(4){
+						a{
+							background: var(--rosa);
+						}
+					}
+				}
+			}
+		}
+	}
 }
 .ComenSugeren{
 	grid-area: comentario;
