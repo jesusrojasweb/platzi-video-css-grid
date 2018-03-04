@@ -350,3 +350,39 @@ body{
 		}
 	}
 }
+@media screen and (max-width: 700px){
+	.Platzi{
+		padding: 2em 1.5em;
+	}
+	.Video{
+		&-overlay{
+			padding: 1em;
+			&-play{
+				width: 90px;
+				height: 90px;
+			}
+		}
+	}
+	.Info{
+		&-social{
+			grid-template-columns: 2fr 1fr 1fr;
+			&-btn{
+				&:nth-child(4){
+					display: none;
+				}
+			}
+		}
+	}
+	.ComenSugeren{
+		grid-template-columns: 1fr;
+		padding: 2em;
+		&-comentarios{
+			&-list{
+				&-item{
+
+					grid-gap: 2px 10px;
+				}
+			}
+		}
+	}
+}
